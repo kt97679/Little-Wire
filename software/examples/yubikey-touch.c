@@ -58,11 +58,11 @@ int main(int argc, char **argv) {
         return 0;
     }
 
-    pinMode(lw, TOUCH, INPUT);
+    pinMode(lw, TOUCH, INPUT);    // by default pin should be in a high impedance state (high-z)
     digitalWrite(lw, TOUCH, LOW);
-    pinMode(lw, TOUCH, OUTPUT);
+    pinMode(lw, TOUCH, OUTPUT);   // to simulate touch we change pin state to output with low level
     delay(atoi(argv[1]));
-    pinMode(lw, TOUCH, INPUT);
+    pinMode(lw, TOUCH, INPUT);    // and after delay return it to the high impedance state
 	
     if (lwStatus < 0) {
 	printf("> lwStatus: %d\n", lwStatus);
